@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-# Excelファイル読み込み
-file_path = r"C:\Users\owner\OneDrive - 朝日大学\卒論\洋画データ映画com_6月21日.xlsx"
+# Cloud でも動くように相対パスに変更
+file_path = "movies.xlsx"  # app.py と同じフォルダに置く
 movies = pd.read_excel(file_path, sheet_name="総データ")
 
 # 列名の前後空白を削除
@@ -25,7 +25,7 @@ min_rating = st.slider(
     0.0, 10.0, 7.0
 )
 
-# レビュー数スライダー（オプション）
+# レビュー数スライダー
 min_review = st.number_input(
     "最低レビュー数",
     min_value=0,
@@ -33,7 +33,7 @@ min_review = st.number_input(
     step=1
 )
 
-# お気に入り数スライダー（オプション）
+# お気に入り数スライダー
 min_fav = st.number_input(
     "最低お気に入り数",
     min_value=0,
