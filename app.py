@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # ファイル読み込み
-file_path = "movie.xlsx"
+file_path = "movies.xlsx"
 movies = pd.read_excel(file_path, sheet_name="総データ")
 
 # 評価スケールを10 → 5 に変換
