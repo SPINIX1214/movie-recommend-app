@@ -57,7 +57,7 @@ def add_avg_line(ax, value, label, color="red"):
 fig, axes = plt.subplots(3, 1, figsize=(6, 8))
 
 # 1. 興業収入
-axes[0].hist(movies["興業収入（億円)"], bins=20, color="skyblue", edgecolor="black")
+axes[0].hist(movies["興業収入（億円）"], bins=20, color="skyblue", edgecolor="black")
 axes[0].set_title("興業収入（億円）")
 axes[0].xaxis.set_major_formatter(FuncFormatter(lambda x, _: f"{int(x)}"))
 add_avg_line(axes[0], avg_revenue, "興業収入平均")
@@ -78,7 +78,7 @@ st.pyplot(fig)
 
 # --- フィルタリングされたデータ表示 ---
 filtered = movies[
-    (movies["興業収入（億円)"] >= revenue_min) & (movies["興業収入（億円)"] <= revenue_max) &
+    (movies["興業収入（億円）"] >= revenue_min) & (movies["興業収入（億円）"] <= revenue_max) &
     (movies["映画com評価"] >= rating_min) &
     (movies["レビュー数"] >= review_min)
 ]
